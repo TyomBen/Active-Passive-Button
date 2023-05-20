@@ -5,9 +5,14 @@ const Data = () => {
     const [info, setInfo] = useState ([]);
     const [users, setUsers] = useState ('users');
     const gettingData = async () => {
+        try {
         const response = await fetch (`${URL}/${users}`);
         const data = await response.json ();
         setInfo (data);
+        }catch (eror) {
+            throw eror;
+        }
+      
     }
 
     useEffect(() => {
