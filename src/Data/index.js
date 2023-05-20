@@ -22,7 +22,8 @@ const Data = () => {
         <Buttons handleSetInfos = {handleSetInfos} users = {users} />
         {
             info.map (item => {
-              return <p key={item.id}>{users === 'users' ? item.name : item.title}</p>
+                const {name, id, title} = item;
+              return <p key={id}>{users === 'users' ? name : title}</p>
             })
         }
         </>
